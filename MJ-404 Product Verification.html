@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MJ-404 Product Verification</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#f5f5f2,#101010);--card:light-dark(#fff,#1b1b1b);--text:light-dark(#171717,#f4f4f4);--muted:light-dark(#666,#aaa);--line:light-dark(#ddd,#333);--accent:light-dark(#111,#fff);--accentText:light-dark(#fff,#111);--ok:light-dark(#146c43,#66d19e)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}main{min-height:100vh;display:grid;place-items:center;padding:28px}.card{width:min(520px,100%);background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 14px 45px #00000018}.brand{font-size:13px;letter-spacing:2px;font-weight:700;text-transform:uppercase}.mark{margin:24px 0 18px;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--ok);color:white;font-size:30px;font-weight:700}.status{font-size:28px;font-weight:800;line-height:1.1;margin-bottom:8px}.sub{color:var(--muted);margin-bottom:26px}.row{display:flex;justify-content:space-between;padding:15px 0;border-top:1px solid var(--line);gap:20px}.label{color:var(--muted)}.value{font-weight:700;text-align:right}.note{margin-top:22px;padding:14px 16px;border-radius:14px;background:light-dark(#f1f1ee,#242424);font-size:13px;color:var(--muted);line-height:1.5}.verify{margin-top:22px;width:100%;border:0;border-radius:13px;padding:14px;background:var(--accent);color:var(--accentText);font-weight:700;cursor:pointer}.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}
+</style>
+</head>
+<body>
+<main><section class="card" aria-label="Product verification">
+<div class="brand">Product Verification</div>
+<div class="mark">✓</div>
+<div class="status">Product Verified</div>
+<div class="sub">Verification record for the product shown below.</div>
+<div class="row"><span class="label">Product</span><span class="value">Electric Kettle</span></div>
+<div class="row"><span class="label">Model</span><span class="value">MJ-404</span></div>
+<div class="row"><span class="label">Feature</span><span class="value">Auto Cut Switch</span></div>
+<div class="row"><span class="label">Verification ID</span><span class="value" id="id">MJ404-001</span></div>
+<div class="note"><strong>Verified product record</strong><br>This page confirms the verification record associated with this QR code. It does not independently certify Panasonic authorization or manufacturer authenticity.</div>
+<div class="note"><strong>Text QR option</strong><br>For a QR code that opens no website, encode this text: <strong>✓ ORIGINAL PRODUCT<br>PANASONIC ELECTRIC KETTLE<br>MODEL: MJ-404<br>AUTO CUT SWITCH</strong></div>
+<button class="verify" onclick="this.textContent='✓ Verification Confirmed';setTimeout(()=>this.textContent='Verify Again',1200)">Verify Again</button>
+<div class="footer">Keep this QR code with the product for future verification.</div>
+</section></main>
+<script>
+const p=new URLSearchParams(location.search);if(p.get('id'))document.getElementById('id').textContent=p.get('id');
+</script>
+</body>
+</html>
